@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="floatswipe.com.jamper.floatingswipedactivity">
+
+    <application>
+        <activity android:name=".UI.FloatingActivity"
+            android:theme="@style/Theme.FloatingSwipe"/>
+
+        <activity android:name=".UI.FloatingSwipeActivity"
+            android:theme="@style/Theme.FloatingSwipe"/>
+
+        <activity android:name=".UI.FloatingMenuDialog"
+            android:theme="@style/Theme.FloatingMenuSwipe"/>
+
+    </application>
+
+</manifest>
