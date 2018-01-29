@@ -1,5 +1,6 @@
 # FloatingMenuDialog
-Get a customized dialog with nice animations looking like IOS dialog to be used as a menu dialog.
+Use this light weight android library to Get a customized floating menu dialog with nice animations looking like IOS dialog to be used as a menu dialog in android.
+
 [![](https://www.jitpack.io/v/JamperCin/FloatingMenuDialog.svg)](https://www.jitpack.io/#JamperCin/FloatingMenuDialog)
 
 ![alt text](https://github.com/JamperCin/FloatingMenuDialog/blob/master/sample.png)
