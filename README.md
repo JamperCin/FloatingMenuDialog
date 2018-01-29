@@ -2,6 +2,8 @@
 Get a customized dialog with nice animations looking like IOS dialog to be used as a menu dialog.
 [![](https://www.jitpack.io/v/JamperCin/FloatingMenuDialog.svg)](https://www.jitpack.io/#JamperCin/FloatingMenuDialog)
 
+![alt text](https://github.com/JamperCin/FloatingMenuDialog/blob/master/sample.png)
+
 **Step 1: Add this to your root build.gradle(Project level) at the end of repositories:**
 
 	allprojects {
