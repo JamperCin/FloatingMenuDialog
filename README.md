@@ -1,5 +1,7 @@
 # FloatingMenuDialog
 Get a customized dialog with nice animations looking like IOS dialog to be used as a menu dialog.
+[![](https://www.jitpack.io/v/JamperCin/FloatingMenuDialog.svg)](https://www.jitpack.io/#JamperCin/FloatingMenuDialog)
+
 **Step 1: Add this to your root build.gradle(Project level) at the end of repositories:**
 
 	allprojects {
@@ -12,21 +14,45 @@ Get a customized dialog with nice animations looking like IOS dialog to be used 
   **Step 2: Add the dependency to your dependencies in the build.gradle (Module:App level)**
 
 	dependencies {
-	       compile 'com.github.JamperCin:FloatingSwipeActivity:1.0.1'
+	      compile 'com.github.JamperCin:FloatingMenuDialog:1.0.0'
 	}
   
  
 
-**Step 3: Extend it from the Activity you want to apply it on like below... **
-
-**A. When you want to apply both FLOATING and SWIPING gestures to the same activity, you extend FLoatingSwipeActivity**
-
+**Step 3: Just call it from the Activity **
 ```
-  public class TestActivity extends FloatingSwipeActivity {
+ new FloatingMenuDialog(TestAppActivity.this)
+                .setDialogTitle("Add Picture")
+                .setPositveButtonText("From Camera")
+                .setNeutralButtonText("From Gallery")
+                .setExtraButtonText("From Google Drive")
+                .setNegativeButtonText("Close Dialog")
+                .setDismissDialogOnMenuOnClick(false)  //Dismiss the dialog anytime a menu item is clicked
+                .setDialogCancelable(true)             // Set dialog cancellable
+                .setOnPositiveButtonOnClick(new OnMenuItemClickListener() {
+                    @Override
+                    public void onClick() {
+                        Toast.makeText(TestAppActivity.this, "Positive", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setOnNegativeButtonOnClick(new OnMenuItemClickListener() {
+                    @Override
+                    public void onClick() {
+                        Toast.makeText(TestAppActivity.this, "Negative", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setOnNeutralButtonOnClick(new OnMenuItemClickListener() {
+                    @Override
+                    public void onClick() {
+                        Toast.makeText(TestAppActivity.this, "Neutral", Toast.LENGTH_SHORT).show();
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_layout);
-    }
-}
+                    }
+                })
+                .setOnExtraButtonOnClick(new OnMenuItemClickListener() {
+                    @Override
+                    public void onClick() {
+                        Toast.makeText(TestAppActivity.this, "Extra", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .show();
+```
