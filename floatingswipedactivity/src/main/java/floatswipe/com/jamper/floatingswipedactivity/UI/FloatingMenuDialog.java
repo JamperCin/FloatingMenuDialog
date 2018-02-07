@@ -35,14 +35,14 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
     }
 
     private void initViews() {
-        title = (TextView) findViewById(R.id.dg_Title);
-        positiveButtonText = (TextView) findViewById(R.id.dg_PositiveButtonText);
-        neutralButtonText = (TextView) findViewById(R.id.dg_NeutralButtonText);
-        extraButtonText = (TextView) findViewById(R.id.dg_ExtraButtonText);
-        cancelText = (TextView) findViewById(R.id.dg_cancelText);
-        cancelButton = (LinearLayout) findViewById(R.id.dg_CancelButton);
-        extraButton = (LinearLayout) findViewById(R.id.dg_ExtraButton);
-        neutralButton = (LinearLayout) findViewById(R.id.dg_NeutralButton);
+        title = (TextView) findViewById(R.id.dg_Title_x);
+        positiveButtonText = (TextView) findViewById(R.id.dg_PositiveButtonText_x);
+        neutralButtonText = (TextView) findViewById(R.id.dg_NeutralButtonText_x);
+        extraButtonText = (TextView) findViewById(R.id.dg_ExtraButtonText_x);
+        cancelText = (TextView) findViewById(R.id.dg_cancelText_x);
+        cancelButton = (LinearLayout) findViewById(R.id.dg_CancelButton_x);
+        extraButton = (LinearLayout) findViewById(R.id.dg_ExtraButton_x);
+        neutralButton = (LinearLayout) findViewById(R.id.dg_NeutralButton_x);
 
         positiveButtonText.setOnClickListener(this);
         neutralButton.setOnClickListener(this);
@@ -104,7 +104,7 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_layout);
+        setContentView(R.layout.dialog_menu_layout);
         initViews();
     }
 
@@ -324,23 +324,23 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.dg_PositiveButtonText) {
+        if (v.getId() == R.id.dg_PositiveButtonText_x) {
             if (onPositiveOnClick != null)
                 onPositiveOnClick.onClick();
         }
 
-        if (v.getId() == R.id.dg_NeutralButton) {
+        if (v.getId() == R.id.dg_NeutralButton_x) {
             if (onNeutralOnClick != null)
                 onNeutralOnClick.onClick();
         }
 
-        if (v.getId() == R.id.dg_CancelButton) {
+        if (v.getId() == R.id.dg_CancelButton_x) {
             if (onNegativeOnClick != null)
                 onNegativeOnClick.onClick();
             dismissDialog();
         }
 
-        if (v.getId() == R.id.dg_ExtraButton) {
+        if (v.getId() == R.id.dg_ExtraButton_x) {
             if (onExtraOnClick != null)
                 onExtraOnClick.onClick();
         }
