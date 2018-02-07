@@ -16,7 +16,7 @@ Get a customized dialog with nice animations looking like IOS dialog to be used 
   **Step 2: Add the dependency to your dependencies in the build.gradle (Module:App level)**
 
 	dependencies {
-	      compile 'com.github.JamperCin:FloatingMenuDialog:1.0.0'
+	      compile 'com.github.JamperCin:FloatingMenuDialog:1.0.1'
 	}
   
  

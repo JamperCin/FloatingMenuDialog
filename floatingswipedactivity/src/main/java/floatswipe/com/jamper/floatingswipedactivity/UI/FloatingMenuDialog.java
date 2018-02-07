@@ -2,8 +2,6 @@ package floatswipe.com.jamper.floatingswipedactivity.UI;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -129,8 +127,8 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
 
 
         try {
-            this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND); //Clear background Dim
-            this.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+           // this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND); //Clear background Dim
+           // this.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         } catch (Exception e) {
             e.printStackTrace();
         }
