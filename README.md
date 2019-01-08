@@ -17,7 +17,7 @@ Use this light weight android library to Get a customized floating menu dialog w
   **Step 2: Add the dependency to your dependencies in the build.gradle (Module:App level)**
 
 	dependencies {
-	      compile 'com.github.JamperCin:FloatingMenuDialog:1.0.2'
+	      compile 'com.github.JamperCin:FloatingMenuDialog:1.0.3'
 	}
   
  

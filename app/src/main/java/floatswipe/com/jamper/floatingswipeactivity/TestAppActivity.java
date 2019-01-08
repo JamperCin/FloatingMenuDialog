@@ -31,6 +31,8 @@ public class TestAppActivity extends AppCompatActivity implements View.OnClickLi
                 .setNegativeButtonText("Close Dialog")
                 .setDismissDialogOnMenuOnClick(false)
                 .setDialogCancelable(true)
+                .setPositiveTextColor(R.color.colorPrimary)
+                .setNegativeTextColor("#aab3ef")
                 .setOnPositiveButtonOnClick(new OnMenuItemClickListener() {
                     @Override
                     public void onClick() {

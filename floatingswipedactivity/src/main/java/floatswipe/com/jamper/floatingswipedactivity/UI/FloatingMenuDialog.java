@@ -2,6 +2,7 @@ package floatswipe.com.jamper.floatingswipedactivity.UI;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,6 +25,7 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
     private boolean dismissDialog, cancelable;
 
     private String titleText, positiveText, neutralText, extraText, cancellingText;
+    private int titleColor, positiveTextColor, neutralTextColor, extraTextColor, cancelTextColor = 0;
 
     public FloatingMenuDialog(Activity context) {
         super(context);
@@ -95,6 +97,27 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
             }
 
 
+            try {
+                if (titleColor != 0)
+                    title.setTextColor(titleColor);
+
+                if (positiveTextColor != 0)
+                    positiveButtonText.setTextColor(positiveTextColor);
+
+                if (neutralTextColor != 0)
+                    neutralButtonText.setTextColor(neutralTextColor);
+
+                if (extraTextColor != 0)
+                    extraButtonText.setTextColor(extraTextColor);
+
+                if (cancelTextColor != 0)
+                    cancelText.setTextColor(cancelTextColor);
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -127,8 +150,8 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
 
 
         try {
-           // this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND); //Clear background Dim
-           // this.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            // this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND); //Clear background Dim
+            // this.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -162,6 +185,9 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
         this.onNegativeOnClick = onMenuItemClickListener;
         return this;
     }
+
+
+
 
 
     ///////////////////////////////////////////////////////////
@@ -315,6 +341,64 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
         setCancelable(this.cancelable);
         return this;
     }
+
+
+    ///////////======= SET THE TEXT COLORS ========/////////////
+    public FloatingMenuDialog setPositiveTextColor(int color) {
+        this.positiveTextColor = color;
+        return this;
+    }
+
+    public FloatingMenuDialog setExtraTextColor(int color) {
+        this.extraTextColor = color;
+        return this;
+    }
+
+    public FloatingMenuDialog setNeutralTextColor(int color) {
+        this.neutralTextColor = color;
+        return this;
+    }
+
+    public FloatingMenuDialog setNegativeTextColor(int color) {
+        this.cancelTextColor = color;
+        return this;
+    }
+
+
+    public FloatingMenuDialog setTitleTextColor(int color) {
+        this.titleColor = color;
+        return this;
+    }
+
+    // Using the Hexadecimal Colors
+
+    public FloatingMenuDialog setPositiveTextColor(String color) {
+        this.positiveTextColor =  Color.parseColor(color);
+        return this;
+    }
+
+    public FloatingMenuDialog setExtraTextColor(String color) {
+        this.extraTextColor = Color.parseColor(color);
+        return this;
+    }
+
+    public FloatingMenuDialog setNeutralTextColor(String color) {
+        this.neutralTextColor = Color.parseColor(color);
+        return this;
+    }
+
+    public FloatingMenuDialog setNegativeTextColor(String color) {
+        this.cancelTextColor = Color.parseColor(color);
+        return this;
+    }
+
+
+    public FloatingMenuDialog setTitleTextColor(String color) {
+        this.titleColor = Color.parseColor(color);
+        return this;
+    }
+
+
 
 
     @Override

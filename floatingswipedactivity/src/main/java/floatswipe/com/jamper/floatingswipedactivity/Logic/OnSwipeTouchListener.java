@@ -9,15 +9,6 @@ import android.widget.Toast;
 
 import floatswipe.com.jamper.floatingswipedactivity.R;
 
-/*
-Usage:
-  myView.setOnTouchListener(new OnSwipeTouchListener(this) {
-    @Override
-    public void onSwipeDown() {
-      Toast.makeText(MainActivity.this, "Down", Toast.LENGTH_SHORT).show();
-    }
-  }
-*/
 public class OnSwipeTouchListener implements View.OnTouchListener {
     Activity mContext;
     View view;
@@ -64,17 +55,17 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
                         if (diffY > 0) {
                             onSwipeDown();
                         } else {
-                          //  onSwipeUp();
+                            //  onSwipeUp();
 
-                          //  if (e1.getAction() == MotionEvent.ACTION_DOWN) {
-                                ClipData data = ClipData.newPlainText("", "");
-                                View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
-                                view.startDrag(data, shadowBuilder, view, 0);
-                              //  view.setVisibility(View.INVISIBLE);
-                               // return true;
-                          //  } else {
-                           //     return false;
-                           // }
+                            //  if (e1.getAction() == MotionEvent.ACTION_DOWN) {
+                            ClipData data = ClipData.newPlainText("", "");
+                            View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
+                            view.startDrag(data, shadowBuilder, view, 0);
+                            //  view.setVisibility(View.INVISIBLE);
+                            // return true;
+                            //  } else {
+                            //     return false;
+                            // }
                         }
                     }
                 }
@@ -105,7 +96,7 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
 
     public void onSwipeDown() {
         try {
-      //      mContext.getWindow().setWindowAnimations(R.style.AnimationDragDown);
+            //      mContext.getWindow().setWindowAnimations(R.style.AnimationDragDown);
         } catch (Exception e) {
 
         }
@@ -114,8 +105,6 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
     }
 
 
-   /* private final class onTouchEvent implements View.On{
 
-    }*/
 
 }
