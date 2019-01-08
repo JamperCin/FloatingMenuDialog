@@ -17,7 +17,7 @@ Use this light weight android library to Get a customized floating menu dialog w
   **Step 2: Add the dependency to your dependencies in the build.gradle (Module:App level)**
 
 	dependencies {
-	      implementation 'com.github.JamperCin:FloatingMenuDialog:1.0.3'
+	      implementation 'com.github.JamperCin:FloatingMenuDialog:1.0.4'
 	}
   
  
@@ -64,4 +64,13 @@ Use this light weight android library to Get a customized floating menu dialog w
 ```
  .setPositiveTextColor(R.color.colorPrimary)
  .setNegativeTextColor("#aab3ef")
+```
+
+**To apply custom font, you need to set the name of the font or path of font if it's in a subfolder in the assets folder like below**
+```
+  .setFontPath("GothamRnd-Bold.otf")
+  
+  OR
+  
+    .setFontPath("font/GothamRnd-Bold.ttf")
 ```

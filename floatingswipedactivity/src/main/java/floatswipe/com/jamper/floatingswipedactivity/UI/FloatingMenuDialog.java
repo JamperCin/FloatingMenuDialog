@@ -3,6 +3,7 @@ package floatswipe.com.jamper.floatingswipedactivity.UI;
 import android.app.Activity;
 import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -27,8 +28,12 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
     private String titleText, positiveText, neutralText, extraText, cancellingText;
     private int titleColor, positiveTextColor, neutralTextColor, extraTextColor, cancelTextColor = 0;
 
+    private Activity mContext;
+    private String fontName = "";
+
     public FloatingMenuDialog(Activity context) {
         super(context);
+        mContext = context;
         dismissDialog = true;
         cancelable = true;
         positiveText = null;
@@ -118,6 +123,22 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
             }
 
 
+            try{
+                if (TextUtils.isEmpty(fontName) || fontName == null)
+                    return;
+                Typeface font = Typeface.createFromAsset(mContext.getAssets(), fontName);
+
+                title.setTypeface(font);
+                positiveButtonText.setTypeface(font);
+                neutralButtonText.setTypeface(font);
+                extraButtonText.setTypeface(font);
+                cancelText.setTypeface(font);
+
+            }catch (IllegalArgumentException e){
+                e.printStackTrace();
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -187,6 +208,10 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
     }
 
 
+    public FloatingMenuDialog setFontPath(String fontPath) {
+        this.fontName = fontPath;
+        return this;
+    }
 
 
 
@@ -345,56 +370,96 @@ public class FloatingMenuDialog extends Dialog implements View.OnClickListener {
 
     ///////////======= SET THE TEXT COLORS ========/////////////
     public FloatingMenuDialog setPositiveTextColor(int color) {
-        this.positiveTextColor = color;
+        try {
+            this.positiveTextColor = mContext.getResources().getColor(color) ;
+        }catch (IllegalArgumentException e){
+            this.positiveTextColor = 0;
+        }
         return this;
     }
 
     public FloatingMenuDialog setExtraTextColor(int color) {
-        this.extraTextColor = color;
+        try {
+            this.extraTextColor = mContext.getResources().getColor(color) ;
+        }catch (IllegalArgumentException e){
+            this.extraTextColor = 0;
+        }
         return this;
     }
 
     public FloatingMenuDialog setNeutralTextColor(int color) {
-        this.neutralTextColor = color;
+        try {
+            this.neutralTextColor = mContext.getResources().getColor(color) ;
+        }catch (IllegalArgumentException e){
+            this.neutralTextColor = 0;
+        }
         return this;
     }
 
     public FloatingMenuDialog setNegativeTextColor(int color) {
-        this.cancelTextColor = color;
+        try {
+            this.cancelTextColor = mContext.getResources().getColor(color) ;
+        }catch (IllegalArgumentException e){
+            this.cancelTextColor = 0;
+        }
         return this;
     }
 
 
     public FloatingMenuDialog setTitleTextColor(int color) {
-        this.titleColor = color;
+        try {
+            this.titleColor = mContext.getResources().getColor(color) ;
+        }catch (IllegalArgumentException e){
+            this.titleColor = 0;
+        }
         return this;
     }
 
     // Using the Hexadecimal Colors
 
     public FloatingMenuDialog setPositiveTextColor(String color) {
-        this.positiveTextColor =  Color.parseColor(color);
+        try {
+            this.positiveTextColor = Color.parseColor(color);
+        }catch (IllegalArgumentException e){
+            this.positiveTextColor = 0;
+        }
         return this;
     }
 
     public FloatingMenuDialog setExtraTextColor(String color) {
-        this.extraTextColor = Color.parseColor(color);
+        try {
+            this.extraTextColor = Color.parseColor(color);
+        }catch (IllegalArgumentException e){
+            this.extraTextColor = 0;
+        }
         return this;
     }
 
     public FloatingMenuDialog setNeutralTextColor(String color) {
-        this.neutralTextColor = Color.parseColor(color);
+        try {
+            this.neutralTextColor = Color.parseColor(color);
+        }catch (IllegalArgumentException e){
+            this.neutralTextColor = 0;
+        }
         return this;
     }
 
     public FloatingMenuDialog setNegativeTextColor(String color) {
-        this.cancelTextColor = Color.parseColor(color);
+        try {
+            this.cancelTextColor = Color.parseColor(color);
+        }catch (IllegalArgumentException e){
+            this.cancelTextColor = 0;
+        }
         return this;
     }
 
 
     public FloatingMenuDialog setTitleTextColor(String color) {
-        this.titleColor = Color.parseColor(color);
+        try {
+            this.titleColor = Color.parseColor(color);
+        }catch (IllegalArgumentException e){
+            this.titleColor = 0;
+        }
         return this;
     }
 

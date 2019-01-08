@@ -21,9 +21,9 @@
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
             android:text="Title"
+
             android:textColor="@android:color/black"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
 
 
         <TextView
@@ -121,6 +121,7 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal"
             android:text="Cancel"
+            android:textStyle="bold"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="15sp" />
 
