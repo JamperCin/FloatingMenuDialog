@@ -59,3 +59,9 @@ Use this light weight android library to Get a customized floating menu dialog w
                 })
                 .show();
 ```
+
+**To apply colors to the individual buttons text , you can do so with resource color or passing hexadecimal color**
+```
+ .setPositiveTextColor(R.color.colorPrimary)
+ .setNegativeTextColor("#aab3ef")
+```
